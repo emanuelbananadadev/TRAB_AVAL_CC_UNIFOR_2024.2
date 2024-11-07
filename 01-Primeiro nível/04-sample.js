@@ -1,6 +1,6 @@
-const fcr = function(a, b) {
+function somar(a, b) {
     return a + b;
-};
+}
 
-const rsl = fcr(3, 5);
-console.log(rsl);
+const soma = somar(3, 5);
+console.log(soma);
