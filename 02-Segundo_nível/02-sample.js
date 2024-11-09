@@ -1,26 +1,22 @@
 function verificarSePodeDirigir(idade) {
-    if(idade < 0){
-        throw new Error('O número não pode ser negativo');
+    const maiorDeIdade = 18;
+    if (idade < 0) {
+        throw new Error("O número não pode ser negativo");
     }
-    if (idade >= 18) {
+    if (idade >= maiorDeIdade) {
         return "Pode dirigir";
     } else {
         return "Não pode dirigir";
     }
 }
-try{
-console.log(verificarSePodeDirigir(-1));
-}catch (error) {
+
+const Pessoa = {
+    nome: "Pedro",
+    idade: 18
+};
+
+try {
+    console.log(verificarSePodeDirigir(Pessoa.idade));
+} catch (error) {
     console.error(error.message);
 }
-try{
-    console.log(verificarSePodeDirigir(18));
-  
-    }catch (error) {
-        console.error(error.message);
-    }
-    try{
-        console.log(verificarSePodeDirigir(15));
-        }catch (error) {
-            console.error(error.message);
-        }
