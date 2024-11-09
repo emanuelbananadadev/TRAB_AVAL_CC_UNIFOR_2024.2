@@ -59,7 +59,7 @@ function obterUltimoLogin(usuario1, usuario2) {
 // Deixe a função clara para que seja possível de compreender que ela verifica se o usuário foi criado recentemente
 function verificaUsuarioRecente(usuario) {
     const now = new Date();
-    const umAnoEmMillis = 31536000000 // 1 ano em milissegundos :)
+    const umAnoEmMillis = 31536000000; // 1 ano em milissegundos :)
     if (now - usuario.criadoEm < umAnoEmMillis) {
         console.log("Usuário criado recentemente.");
     } else {
