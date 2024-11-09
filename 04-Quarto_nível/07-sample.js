@@ -1,8 +1,17 @@
-async function buscarEspecie() {
-    const resposta = await fetch("https://swapi.dev/api/species/1/");
-    const especie = await resposta.json();
+async function buscarEspeciePorId(id) {
+    try {
+        const resposta = await fetch(`https://swapi.dev/api/species/${id}/`);
 
-    console.log(especie.average_lifespan.toUpperCase());
+        if (!resposta.ok) {
+            throw new Error("Não foi possível obter a espécie.");
+        }
+
+        const especie = await resposta.json();
+
+        console.log(`Expectativa de vida média: ${especie.average_lifespan}`); //sem toUpperCase em um número
+    } catch (erro) {
+        console.error("Erro ao buscar a espécie:", erro);
+    }
 }
 
-buscarEspecie();
+buscarEspeciePorId(1);
