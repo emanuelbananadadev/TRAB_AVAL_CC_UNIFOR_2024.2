@@ -5,12 +5,15 @@ function tentarLogin(senha) {
         throw new Error("O número de tentativas tem que ser maior que o")
     
     }
-//Troquei o while pelo for pois foi usar para contar tentativas
+
     for (let tentativas = 0; tentativas < tentativasMaximas;) {
         if (senha === senhaCorreta) {
             return "Login efetuado com sucesso!";
+        }else{
+            console.log(`Tentativa ${tentativas + 1} de ${tentativasMaximas}: Senha incorreta.`);
         }
         tentativas++;
+        
     }
 
     return "Tentativas de login excedidas.";
