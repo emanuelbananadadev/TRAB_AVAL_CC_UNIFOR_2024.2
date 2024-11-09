@@ -1,4 +1,7 @@
 function calcularSalarioFuncionario(horasTrabalhadas, valorHora, cargo) {
+    if(horasTrabalhadas < 0 && valorHoras < 0){
+        throw new Error("As horas trabalhads e valor da hora não pode ser negativos");
+    }
     const salarioBase = horasTrabalhadas * valorHora;
 
     let salarioComBonus;
@@ -23,6 +26,13 @@ function calcularSalarioFuncionario(horasTrabalhadas, valorHora, cargo) {
 
     return salarioFinal;
 }
+const horasTrabalhadas = 160;
+const valorHora = 25;
+const cargo = "gerente";
 
-const salario = calcularSalarioFuncionario(160, 25, "gerente");
+const salario = calcularSalarioFuncionario(horasTrabalhadas, valorHora, cargo);
+try {
 console.log(`O salário final é: ${salario}`);
+} catch (error){
+    console.error(error.message);
+}
