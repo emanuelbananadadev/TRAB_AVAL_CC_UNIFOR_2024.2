@@ -1,5 +1,8 @@
 function principal() {
-    const itens = [10, 20, 30, 40, 50];
+
+    const itensObject = { item1: 10, item2: 20, item3: 30, item4: 40, item5: 50 };
+
+    const itens = [itensObject.item1, itensObject.item2, itensObject.item3, itensObject.item4, itensObject.item5];
     let total = 0;
     
     const x = 1;
@@ -10,9 +13,13 @@ function principal() {
         total += itens[i] * z;
     }
 
-    const usuario = obterUsuario(42);
+    const id = 42;
 
-    if (x === 1 && y === 2 && usuario.ativo === 1) {
+    const usuario = obterUsuario(id);
+
+    const ativo = 2;
+
+    if (x === 1 && y === ativo && usuario.ativo === 1) {
         console.log("Usuário está ativo");
     } else {
         console.log("Usuário não está ativo");
@@ -23,14 +30,19 @@ function principal() {
 }
 
 function obterUsuario(id) {
-    if (id === 42) {
+    const database = {
+        id1: 42,
+        id2: 43
+    };
+
+    if (id === database.id1) {
         return {
             id: 42,
             nome: "João Silva",
             idade: 25,
             ativo: 1
         };
-    } else if (id === 43) {
+    } else if (id === database.id2) {
         return {
             id: 43,
             nome: "Maria Souza",
@@ -44,7 +56,10 @@ function obterUsuario(id) {
 }
 
 function atualizarDados(usuario) {
-    if (usuario !== null && usuario.idade > 18) {
+
+    const maiorDeIdade = 18;
+
+    if (usuario !== null && usuario.idade > maiorDeIdade) {
         console.log("Atualizando usuário:", usuario.id);
         function salvarDados() {
             console.log("Dados salvos com sucesso!");
@@ -58,11 +73,17 @@ function atualizarDados(usuario) {
 
 function calcular(a, b, c) {
     let d = 0;
-    if (a === 1) {
+    const operacoes= {
+        soma: 1,
+        multiplicao: 2,
+        subtracao: 3
+    };
+
+    if (a === operacoes.soma) {
         d = b + c;
-    } else if (a === 2) {
+    } else if (a === operacoes.multiplicao) {
         d = b * c;
-    } else if (a === 3) {
+    } else if (a === operacoes.subtracao) {
         d = b - c;
     } else {
         d = b / c;
@@ -75,6 +96,8 @@ function calcular(a, b, c) {
 
 function processarDados(n) {
     let resultado = 0;
+
+    const resto = 2;
     for (let i = 1; i <= n; i++) {
         if (i % 2 === 0) {
             resultado += i;
