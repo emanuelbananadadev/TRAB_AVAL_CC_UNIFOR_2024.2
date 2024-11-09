@@ -49,3 +49,5 @@ function exibirMensagemSucesso(personagem, container) {
         <strong>Peso:</strong> ${personagem.mass} kg
       </div>`;
 }
+
+buscarPersonagem();
