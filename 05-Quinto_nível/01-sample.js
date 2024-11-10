@@ -5,21 +5,21 @@ function principal() {
     const itens = [itensObject.item1, itensObject.item2, itensObject.item3, itensObject.item4, itensObject.item5];
     let total = 0;
     
-    const x = 1;
-    const y = 2;
-    const z = 3;
+    const verificador = 1;
+    const ativo = true;
+    const multiplicador = 3;
     
     for (let i = 0; i < itens.length; i++) {
-        total += itens[i] * z;
+        total += itens[i] * multiplicador;
     }
 
     const id = 42;
 
     const usuario = obterUsuario(id);
 
-    const ativo = 2;
+    //const ativo = 2;
 
-    if (x === 1 && y === ativo && usuario.ativo === 1) {
+    if (verificador === 1 && ativo === true && usuario.ativo === 1) {
         console.log("Usuário está ativo");
     } else {
         console.log("Usuário não está ativo");
@@ -71,27 +71,27 @@ function atualizarDados(usuario) {
     }
 }
 
-function calcular(a, b, c) {
-    let d = 0;
+function calcular(operacao, numero1, numero2) {
+    let resultado = 0;
     const operacoes= {
         soma: 1,
         multiplicao: 2,
         subtracao: 3
     };
 
-    if (a === operacoes.soma) {
-        d = b + c;
-    } else if (a === operacoes.multiplicao) {
-        d = b * c;
-    } else if (a === operacoes.subtracao) {
-        d = b - c;
+    if (operacao === operacoes.soma) {
+        resultado = numero1 + numero2;
+    } else if (operacao === operacoes.multiplicao) {
+        resultado = numero1 * numero2;
+    } else if (operacao === operacoes.subtracao) {
+        resultado = numero1 - numero2;
     } else {
-        d = b / c;
+        resultado = numero1 / numero2;
     }
 
-    const e = d.toString().split("").reverse().join("");
-    console.log("String invertida:", e);
-    return e;
+    const resultadoFinal = resultado.toString().split("").reverse().join("");
+    console.log("String invertida:", resultadoFinal);
+    return resultadoFinal;
 }
 
 function processarDados(n) {
