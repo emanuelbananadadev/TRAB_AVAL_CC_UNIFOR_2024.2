@@ -3,6 +3,8 @@ class Gestor {
         this.nome = nome;
         this.idade = idade;
     }
+apresentar() {
+    console.log(`Gestor: ${this.nome}, Idade: ${this.idade}`);
+    }
 }
-
-const gestor = new Gestor("Lucas", 40);
+new Gestor("Cauã", 20).apresentar();
