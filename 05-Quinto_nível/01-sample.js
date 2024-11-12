@@ -97,7 +97,7 @@ function calcular(operacao, numero1, numero2) {
 function processarDados(n) {
     let resultado = 0;
 
-    const resto = 2;
+    
     for (let i = 1; i <= n; i++) {
         if (i % 2 === 0) {
             resultado += i;
