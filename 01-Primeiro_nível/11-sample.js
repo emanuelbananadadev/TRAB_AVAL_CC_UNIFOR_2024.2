@@ -29,7 +29,7 @@ class Usuario {
 
 // Deixe a função clara para que seja possível de compreender que ela verifica o número de usuários com a role de admin
 function contarAdmins(usuarios) {
-    let contador= 0;
+    let contador = 0;
     for (let i = 0; i < usuarios.length; i++) {
         if (usuarios[i].papel=== "admin") {
             contador++;
@@ -40,7 +40,7 @@ function contarAdmins(usuarios) {
 
 // Deixe a função clara para que seja possível de compreender que ela verifica se o número de tentativas de login é excessivo
 function verificarTentativasLogin(usuarios, limite) {
-    if (usuario.tentativasLogin > limite) {
+    if (usuarios.tentativasLogin > limite) {
         console.log("Tentativas de login excessivas.");
     } else {
         console.log("Tentativas de login sob controle.");
@@ -50,9 +50,9 @@ function verificarTentativasLogin(usuarios, limite) {
 // Deixe a função clara para que seja possível de compreender que ela verifica qual usuário logou mais recentemente
 function obterUltimoLogin(usuario1, usuario2) {
     if (usuario1.ultimoLogin > usuario2.ultimoLogin) {
-        return `${usuario1.nome  } logou mais recentemente.`;
+        return `${usuario1.nome} logou mais recentemente.`;
     } else {
-        return `${usuario2.nome  } logou mais recentemente.`;
+        return `${usuario2.nome} logou mais recentemente.`;
     }
 }
 
@@ -67,7 +67,7 @@ function verificaUsuarioRecente(usuario) {
     }
 }
 
-const usuario = [
+const usuarios = [
     new Usuario("Carlos", 25, "admin", new Date(2023, 1, 15), new Date(2024, 8, 1), true, 100, 2),
     new Usuario("Ana", 30, "guest", new Date(2020, 4, 22), new Date(2024, 7, 31), true, 50, 3),
     new Usuario("José", 29, "admin", new Date(2022, 10, 5), new Date(2024, 6, 10), false, 200, 5),
@@ -83,4 +83,4 @@ verificarTentativasLogin(usuarios[2], 4);
 
 console.log(obterUltimoLogin(usuarios[0], usuarios[3]));
 
-verificaUsuariosRecentes(usuarios[3]);
+verificaUsuarioRecente(usuarios[3]);
